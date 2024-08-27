@@ -35,10 +35,6 @@ const LoginSchema = z.object({
     }),
 });
 
-// function GoToRegister(){
-//   navigate("/register")
-// }
-
 const Login = () => {
   const navigate = useNavigate(); // Initialize the navigate function
 
@@ -58,18 +54,16 @@ const Login = () => {
     }
   }
 
-  function GoToRegister() {
+  function goToRegister() {
     navigate("/register");
   }
-  function GoToDashboard() {
-    navigate("/dashboard");
-  }
+
   return (
     <div className="">
       <h1 className="text-3xl flex space-y-4 ">Welcome</h1>
 
-      <h3 className="mb-4 cursor-pointer" onClick={GoToRegister}>
-        Dont have an account yet? Register Now
+      <h3 className="mb-4 cursor-pointer" onClick={goToRegister}>
+        Don't have an account yet? Register Now
       </h3>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -101,7 +95,7 @@ const Login = () => {
               </FormItem>
             )}
           />
-          <Button className="w-full" type="submit" onClick={GoToDashboard}>
+          <Button className="w-full" type="submit">
             Login
           </Button>
         </form>

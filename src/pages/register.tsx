@@ -60,7 +60,7 @@ const Register = () => {
     }
   }
 
-  function GoToLogin() {
+  function goToLogin() {
     navigate("/login");
   }
 
@@ -68,8 +68,8 @@ const Register = () => {
     <div className="">
       <h1 className="text-3xl flex space-y-4 ">Welcome</h1>
 
-      <h3 className="mb-4 cursor-pointer" onClick={GoToLogin}>
-        Already registered login now. Login
+      <h3 className="mb-4 cursor-pointer" onClick={goToLogin}>
+        Already registered Login Now.
       </h3>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -115,7 +115,7 @@ const Register = () => {
               </FormItem>
             )}
           />
-          <Button className="w-full" type="submit" onClick={GoToLogin}>
+          <Button className="w-full" type="submit">
             Register
           </Button>
         </form>

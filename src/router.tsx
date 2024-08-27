@@ -7,6 +7,7 @@ import Login from "./pages/login";
 import Dashboard from "./pages/dashboard";
 import Register from "./pages/register";
 import AuthLayout from "./layouts/auth-layout";
+import DashboardLayout from "./layouts/dashboard-layout";
 
 function Router() {
   // Create the router configuration
@@ -31,7 +32,13 @@ function Router() {
     },
     {
       path: "/dashboard",
-      element: <Dashboard />,
+      element: <DashboardLayout />,
+      children: [
+        {
+          path: "",
+          element: <Dashboard />,
+        },
+      ],
     },
   ]);
 
