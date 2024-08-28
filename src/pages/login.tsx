@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/form";
 
 import { Input } from "@/components/ui/input";
+import { PasswordInput } from "@/components/ui/password-input";
 
 // const navigate = useNavigate();  // Initialize the navigate function
 
@@ -48,6 +49,7 @@ const Login = () => {
 
   function onSubmit(data: z.infer<typeof LoginSchema>) {
     if (data.username && data.password) {
+      localStorage.setItem("isLoggedIn", "true");
       navigate("/dashboard");
     } else {
       console.log("Forms value are missing");
@@ -88,7 +90,11 @@ const Login = () => {
               <FormItem>
                 <FormLabel>Password</FormLabel>
                 <FormControl>
-                  <Input placeholder="Password" type="password" {...field} />
+                  <PasswordInput
+                    placeholder="Password"
+                    // type="password"
+                    {...field}
+                  />
                 </FormControl>
 
                 <FormMessage />

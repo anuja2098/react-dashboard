@@ -72,7 +72,7 @@ export function ActivityBar() {
     React.useState<keyof typeof chartConfig>("weekly");
 
   return (
-    <div className="">
+    <div className="py-7">
       <div className="flex justify-between p-2">
         <div>Activity</div>
 

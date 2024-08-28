@@ -4,7 +4,7 @@ import CustomerDetails from "./CustomerDetails";
 
 const LeftDashboard = () => {
   return (
-    <div className=" w-full md:w-8/12 md:flex-row gap-6">
+    <div className=" w-full md:w-8/12 md:flex-row gap-6 ">
       <CounterWidgets />
       <ActivityBar />
       <CustomerDetails />

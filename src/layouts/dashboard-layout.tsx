@@ -1,8 +1,19 @@
 import Header from "@/components/Header";
 import SideBar from "@/components/Sidebar";
+import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const DashboardLayout = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    if (!isLoggedIn) {
+      navigate("/login");
+    }
+  });
+
   return (
     <div>
       <Header />

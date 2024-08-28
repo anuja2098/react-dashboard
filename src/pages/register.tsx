@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/form";
 
 import { Input } from "@/components/ui/input";
+import { PasswordInput } from "@/components/ui/password-input";
 
 const RegisterSchema = z.object({
   name: z
@@ -108,7 +109,7 @@ const Register = () => {
               <FormItem>
                 <FormLabel>Password</FormLabel>
                 <FormControl>
-                  <Input placeholder="Password" type="password" {...field} />
+                  <PasswordInput placeholder="Password" {...field} />
                 </FormControl>
 
                 <FormMessage />
