@@ -15,7 +15,7 @@ const Header = () => {
   const navigate = useNavigate();
 
   function goToLogin() {
-    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("accessToken");
     navigate("/login");
   }
 

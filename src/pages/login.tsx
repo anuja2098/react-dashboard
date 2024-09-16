@@ -16,6 +16,7 @@ import {
 
 import { Input } from "@/components/ui/input";
 import { PasswordInput } from "@/components/ui/password-input";
+import userService from "@/services/user.service";
 
 // const navigate = useNavigate();  // Initialize the navigate function
 
@@ -50,7 +51,16 @@ const Login = () => {
   function onSubmit(data: z.infer<typeof LoginSchema>) {
     if (data.username && data.password) {
       localStorage.setItem("isLoggedIn", "true");
-      navigate("/dashboard");
+      // fetch()
+      userService
+        .loginUser(data.username, data.password)
+        .then(() => {
+          navigate("/dashboard");
+        })
+        .catch((err) => {
+          // handle error
+          console.log(err);
+        });
     } else {
       console.log("Forms value are missing");
     }

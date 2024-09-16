@@ -3,11 +3,11 @@ import {
   RouterProvider,
   createBrowserRouter,
 } from "react-router-dom";
-import Login from "./pages/login";
 import Dashboard from "./pages/dashboard";
-import Register from "./pages/register";
 import AuthLayout from "./layouts/auth-layout";
 import DashboardLayout from "./layouts/dashboard-layout";
+import LoginV2 from "./pages/loginV2";
+import RegisterV2 from "./pages/registerV2";
 
 function Router() {
   // Create the router configuration
@@ -22,11 +22,11 @@ function Router() {
         },
         {
           path: "/login",
-          element: <Login />,
+          element: <LoginV2 />,
         },
         {
           path: "/register",
-          element: <Register />,
+          element: <RegisterV2 />,
         },
       ],
     },

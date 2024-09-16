@@ -8,8 +8,9 @@ const DashboardLayout = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    const isLoggedIn = localStorage.getItem("accessToken");
     if (!isLoggedIn) {
+      localStorage.removeItem("accessToken");
       navigate("/login");
     }
   });
